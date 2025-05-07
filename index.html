@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q'Rola Music</title>
+
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- LOGO -->
+  <img src="images/logoblanco.png" alt="Logo Q'Rola" class="logo" />
+
+  <!-- MENÚ -->
+  <div class="menu-btn" id="menuBtn"><div></div></div>
+  <div class="overlay" id="overlayNav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#artistas">Artistas</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="inicio">
+    <video autoplay muted loop playsinline>
+      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>Q'Rola Music</h1>
+    </div>
+
+    <!-- REDES EN INICIO -->
+    <div class="social-links-inicio">
+      <a href="https://facebook.com/tuperfil" target="_blank" aria-label="Facebook">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/facebook.svg" alt="Facebook"/>
+      </a>
+      <a href="https://instagram.com/tuperfil" target="_blank" aria-label="Instagram">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" alt="Instagram"/>
+      </a>
+      <a href="https://twitter.com/tuperfil" target="_blank" aria-label="Twitter">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/twitter.svg" alt="Twitter"/>
+      </a>
+      <a href="https://wa.me/123456789" target="_blank" aria-label="WhatsApp">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg" alt="WhatsApp"/>
+      </a>
+    </div>
+  </section>
+
+  <!-- SEPARADOR -->
+  <div class="separator top">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 C600,80 600,0 1200,80 L1200,0 L0,0 Z" fill="var(--dark)"></path>
+    </svg>
+  </div>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" data-aos="fade-up">
+    <h2>Nosotros</h2>
+    <p>Productora Musical Argentina.</p>
+  </section>
+
+  <!-- SEPARADOR -->
+  <div class="separator bottom">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 C600,80 600,0 1200,80 L1200,0 L0,0 Z" fill="var(--dark)"></path>
+    </svg>
+  </div>
+
+  <!-- ARTISTAS -->
+  <section id="artistas" data-aos="fade-up">
+    <h2>Artistas</h2>
+    <div class="artists-list">
+      <div class="artist-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/logoblanco.png" alt="Sofía" />
+        <h4>Sofía</h4><p>Artista</p>
+      </div>
+      <div class="artist-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/logoblanco.png" alt="Random" />
+        <h4>Random</h4><p>Artista</p>
+      </div>
+      <div class="artist-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/logoblanco.png" alt="Andrés" />
+        <h4>Andrés</h4><p>Artista</p>
+      </div>
+      <div class="artist-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/logoblanco.png" alt="Javi" />
+        <h4>Javi</h4><p>Javi</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" data-aos="fade-up">
+    <h2>Galería</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Reemplaza estas rutas por tus propias imágenes -->
+        <img src="galeria/gal1.PNG" alt="Foto 1"/>
+        <img src="galeria/gal2.png" alt="Foto 2"/>
+        <img src="galeria/gal3.PNG" alt="Foto 3"/>
+        <img src="galeria/gal4.png" alt="Foto 4"/>
+        <img src="galeria/gal1.PNG" alt="Foto 5"/>
+        <!-- Duplicamos para loop infinito -->
+        <img src="galeria/gal2.png" alt="Foto 1"/>
+        <img src="galeria/gal3.PNG" alt="Foto 2"/>
+        <img src="galeria/gal4.png" alt="Foto 3"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <div class="contact-icons">
+      <a href="https://wa.me/123456789" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg" alt="WhatsApp"/></a>
+      <a href="https://www.instagram.com/qrolamusicargentina/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" alt="Instagram"/></a>
+      <a href="https://facebook.com/tuperfil" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/facebook.svg" alt="Facebook"/></a>
+      <a href="https://twitter.com/tuperfil" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/twitter.svg" alt="Twitter"/></a>
+      <a href="mailto:tucorreo@ejemplo.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mail-dot-ru.svg" alt="Email"/></a>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
