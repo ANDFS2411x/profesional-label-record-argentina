@@ -38,9 +38,18 @@
 
   <!-- HERO -->
   <section id="inicio">
-    <video autoplay muted loop playsinline>
-      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-    </video>
+<!-- Actualizado código de video para mejor compatibilidad con iOS -->
+<video id="bg-video" autoplay muted loop playsinline preload="auto" poster="images/poster-fallback.jpg">
+  <!-- URL principal -->
+  <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+  <!-- URL de respaldo -->
+  <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-glowing-network-connections-25073-large.mp4" type="video/mp4">
+  <!-- Mensaje de fallback -->
+  Tu navegador no soporta videos HTML5.
+</video>
+<!-- Overlay traslúcido para mejorar contraste con el título -->
+<div class="video-overlay"></div>
+
     <div class="hero-content" data-aos="zoom-in">
       <h1>Q'Rola Music</h1>
     </div>

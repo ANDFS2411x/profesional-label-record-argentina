@@ -178,20 +178,11 @@ section {
   height: 100%;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: -1;
-  opacity: 0.4;
+  z-index: 1;
+  opacity: 0.5;
 }
 
-#inicio::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient);
-  background-size: 200% 200%;
-  mix-blend-mode: overlay;
-  z-index: 0;
-  animation: moveGradient 8s ease infinite;
-}
+
 
 .hero-content {
   position: relative;
@@ -202,21 +193,56 @@ section {
 }
 
 .hero-content h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  background: var(--gradient);
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  background: linear-gradient(120deg, var(--purple) 0%, var(--blue) 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeInUp 1s ease forwards;
+  animation: gradientMove 5s ease infinite, textGlow 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(142, 68, 173, 0.5), 0 0 40px rgba(52, 152, 219, 0.3);
+}
+
+.hero-content h1::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--blue) 50%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0.6;
+  box-shadow: 0 0 15px var(--blue);
+}
+
+.hero-content h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--purple) 50%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0.6;
+  box-shadow: 0 0 15px var(--purple);
 }
 
 .hero-content p {
-  margin-top: 1rem;
   font-size: 1.2rem;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeIn 1.5s ease 0.5s forwards;
   opacity: 0;
-  animation: fadeIn 1s ease .8s forwards;
 }
-
 
 
 /* SECCIONES */
@@ -490,7 +516,70 @@ section {
   object-fit: cover;
 }
 
+
+/* VIDEO MEJORAS */
+
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  filter: brightness(0.7) contrast(1.1) saturate(1.2);
+}
+
+/* Overlay para mejorar el contraste del video con el texto */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* Para asegurarnos que el hero-content esté por encima del overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease;
+  text-align: center;
+}
+
 /* Animaciones */
+
+/* Nueva animación para el gradiente móvil */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px rgba(142, 68, 173, 0.3), 0 0 15px rgba(52, 152, 219, 0.2); }
+  100% { text-shadow: 0 0 15px rgba(142, 68, 173, 0.6), 0 0 30px rgba(52, 152, 219, 0.4); }
+}
+@keyframes fadeInPop {
+  0%   { opacity: 0; transform: scale(0.9) translateY(40px); }
+  60%  { transform: scale(1.05) translateY(-10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 @keyframes bounce {
   0%, 100% { height: 12px; }
   50%      { height: 70px; }
@@ -550,7 +639,12 @@ section {
     padding: 1rem;
   }
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    padding: 0.3rem 1rem;
+  }
+  .hero-content h1::before,
+  .hero-content h1::after {
+    height: 2px;
   }
   .hero-content p {
     font-size: 1rem;
@@ -606,6 +700,11 @@ section {
   .stat span {
     font-size: 2.5rem;
   }
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    letter-spacing: 1px;
+  }
+
 }
 
 /* Para pantallas muy pequeñitas */
@@ -674,12 +773,6 @@ section {
   width: 180px;
 }
 
-
-
-/* Mejora la visual de texto del Hero */
-.hero-content h1 {
-  font-size: clamp(2rem, 7vw, 3.5rem);
-}
 .hero-content p {
   font-size: 1rem;
   padding: 0 1rem;
